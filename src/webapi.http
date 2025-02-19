@@ -1,0 +1,94 @@
+@api = https://localhost:7064
+
+### Sign in
+# @name signin
+POST {{api}}/identity/sign-in
+Content-Type: application/json
+
+{
+    "username": "thomas",
+    "password": "*****"
+}
+
+###
+@accessToken = {{signin.response.body.$.accessToken}}
+
+####################
+# Projects
+####################
+
+### Search projects
+# query parameters include:
+GET {{api}}/projects
+Authorization: Bearer {{accessToken}}
+
+### Create project
+# @name createProject
+POST {{api}}/projects
+Authorization: Bearer {{accessToken}}
+Content-Type: application/json
+
+{
+    "Title": "Hello"
+}
+
+###
+@projectId = {{createProject.response.body.$.id}}
+
+### Get project by id
+GET {{api}}/projects/{{projectId}}
+Authorization: Bearer {{accessToken}}
+
+### Update project
+PUT {{api}}/projects/{{projectId}}
+Authorization: Bearer {{accessToken}}
+Content-Type: application/json
+
+{
+    "Title": "Goodbye"
+}
+
+### Delete project
+DELETE {{api}}/projects/{{projectId}}
+Authorization: Bearer {{accessToken}}
+
+####################
+# Activities
+####################
+
+### Search activities
+# query parameters include:
+GET {{api}}/activities
+Authorization: Bearer {{accessToken}}
+
+### Create activity
+# @name createActivity
+POST {{api}}/activities
+Authorization: Bearer {{accessToken}}
+Content-Type: application/json
+
+{
+    "ProjectId": "{{projectId}}",
+    "Title": "Hello"
+}
+
+###
+@activityId = {{createActivity.response.body.$.id}}
+
+### Get activity by id
+GET {{api}}/activities/{{activityId}}
+Authorization: Bearer {{accessToken}}
+
+### Update activity
+# Body can set ProjectId, Title, or both.
+PUT {{api}}/activities/{{activityId}}
+Authorization: Bearer {{accessToken}}
+Content-Type: application/json
+
+{
+    "Title": "Goodbye"
+}
+
+### Delete activity
+DELETE {{api}}/activities/{{activityId}}
+Authorization: Bearer {{accessToken}}
