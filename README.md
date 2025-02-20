@@ -59,3 +59,6 @@ This approach gives you a clear structure for your endpoints: You can at a glanc
 ### WebApi.FastEndpoint
 
 FastEndpoints is implemented by first creating a ASP.NET Core web api, then adding the `FastEndpoints` NuGet package. From there, each endpoint is implemented as individual classes . The Fastendpoints framework suggests using a REPR (Request-EndPoint-Response) approach, where the classes defining the related request, edpoint and response, are placed together.
+
+For the `Projcets` endpoints the individual parts (request, response, endpoint and validator) are placed in the same file. For the `Activities`endpoints they are placed in folders as individual files.
+
