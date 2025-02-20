@@ -2,7 +2,7 @@
 using Domain.Models;
 using FastEndpoints;
 
-namespace WebApi.Endpoints.Activities;
+namespace WebApi.Endpoints.Activities.GetActivity;
 
 public class GetActivityEndpoint(
     IGetActivityUseCase useCase) : EndpointWithoutRequest<Activity>

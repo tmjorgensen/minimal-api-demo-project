@@ -17,10 +17,10 @@ public class SearchProjectsEndpoint(
 
     public override async Task HandleAsync(CancellationToken ct)
     {
-        var title = Query<string>("title", false);
-        var previousId = Query<Guid>("previousId", false);
-        var isDescending = Query<bool>("desc", false);
-        var rowCount = Query<int>("take", false);
+        var title = Query<string?>("title", false);
+        var previousId = Query<Guid?>("previousId", false);
+        var isDescending = Query<bool?>("desc", false);
+        var rowCount = Query<int?>("take", false);
 
         var result = await _useCase.InvokeAsync(
             new(title, previousId, isDescending, rowCount),

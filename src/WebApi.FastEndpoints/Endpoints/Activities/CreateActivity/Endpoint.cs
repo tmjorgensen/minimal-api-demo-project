@@ -1,5 +1,6 @@
 ﻿using Application.UseCases.Activities;
 using FastEndpoints;
+using WebApi.Endpoints.Activities.GetActivity;
 
 namespace WebApi.Endpoints.Activities.CreateActivity;
 

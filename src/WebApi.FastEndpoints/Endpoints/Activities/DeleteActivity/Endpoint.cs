@@ -1,7 +1,7 @@
 ﻿using Application.UseCases.Activities;
 using FastEndpoints;
 
-namespace WebApi.Endpoints.Activities;
+namespace WebApi.Endpoints.Activities.DeleteActivity;
 
 public class DeleteActivityEndpoint(
     IDeleteActivityUseCase useCase) : EndpointWithoutRequest
