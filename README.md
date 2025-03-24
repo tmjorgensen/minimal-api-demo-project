@@ -41,7 +41,7 @@ All three web apis do the exact same job: Providing the endpoints needed by the 
 
 This web api is the more traditional one: Endpoints are implemented in controlle classes, found in the `Controllers`folder.
 
-Note that the `AtiitiesController`and `ProjectsController` have been implemented in two different ways: 
+Note that the `ActivitiesController`and `ProjectsController` have been implemented in two different ways: 
 
 - ProjectsController uses a standard Dependency Injection approach, where services are injected in the constructor and stored in readonly fields, later to be used on various methods.
 - ActivitiesController uses an approach where the ASP.NET Core framework injects the services in the individual methods. In this way, only the services actually used by an individual endpoint needs to be resolved by the Dependency Injection contianer.
